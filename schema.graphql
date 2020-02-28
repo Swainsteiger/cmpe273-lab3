@@ -1,0 +1,21 @@
+type Query {
+  student(id:Int!): Student
+  class(id:Int!): Classes
+}
+
+type Mutation {
+  newStudent(name: String!): Student
+  newClass(name: String!): Classes
+  updateClass(class_id: Int ,stud_id: Int): Classes
+}
+
+type Student {
+  id: Int!
+  name: String!
+}
+
+type Classes {
+  id: Int!
+  name: String!
+  students: [Student]
+}
