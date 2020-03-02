@@ -7,13 +7,13 @@ app = Flask(__name__)
 
 data = load_schema_from_path('schema.graphql')
 
-query = QueryType("Query")
+query = ObjectType("Query")
 mutation = ObjectType("Mutation")
 student = ObjectType('Student')
 classes = ObjectType('Classes')
 
 query.set_field("student", r.getStudent)
-query.set_field("class", r.getClasse)
+query.set_field("class", r.getClass)
 
 mutation.set_field("newStudent", r.addStudent)
 mutation.set_field("newClass", r.addClass)
